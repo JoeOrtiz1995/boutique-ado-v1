@@ -60,6 +60,16 @@ body {
     background: #000 !important;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: rgba(255, 255, 255, 0);
+	z-index: -1;
+}
+
 .home-box {
     background-color: rgba(255, 255, 255, 0.3);
 }
