@@ -60,7 +60,7 @@ def adjust_bag(request, item_id):
         if quantity > 0:
             bag[item_id] = quantity
         else:
-            bag.pop[item_id]
+            bag.pop(item_id)
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
