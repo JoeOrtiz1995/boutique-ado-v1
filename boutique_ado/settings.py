@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+if os.path.exists("env.py"):
+  import env 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,8 +80,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'bag.contexts.bag_contents',
                 'django.template.context_processors.media',
+                'bag.contexts.bag_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -179,3 +181,5 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print("STRIPE_WH_SECRET = ",STRIPE_WH_SECRET)
